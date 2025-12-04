@@ -68,7 +68,7 @@ public class MessageService implements CreateLiveMessageUseCase, UpdateLiveMessa
 		String timeText = getTimeText(seconds);
 
 		String text = """
-		Currently working on %s (using %s). Last heartbeat was %s ago.
+		Currently working on %s (using %s). Last heartbeat was %s.
 		""".formatted(heartbeat.project(), heartbeat.language(), timeText);
 
 		UpdateInlineMessageEvent updateEvent = new UpdateInlineMessageEvent(text, id);
