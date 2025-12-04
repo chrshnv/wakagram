@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS users (
+	id BIGINT NOT NULL,
+	api_key TEXT NOT NULL,
+	CONSTRAINT users_pk PRIMARY KEY (id)
+);

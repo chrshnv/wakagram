@@ -1,0 +1,7 @@
+package ltd.chrshnv.wakagram.adapter.out;
+
+import org.jspecify.annotations.NonNull;
+import org.springframework.data.repository.CrudRepository;
+
+public interface UserEntityRepository extends CrudRepository<@NonNull UserEntity, @NonNull Long> {
+}

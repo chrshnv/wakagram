@@ -1,0 +1,12 @@
+spring:
+    application:
+    name: wakagram
+    datasource:
+        url: jdbc:h2:mem:/testdb;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
+        username: sa
+        password:
+    threads:
+        virtual:
+            enabled: true
+telegram:
+    token: ${TELEGRAM_TOKEN}
