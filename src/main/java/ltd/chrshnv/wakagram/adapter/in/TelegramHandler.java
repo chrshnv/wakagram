@@ -1,5 +1,6 @@
 package ltd.chrshnv.wakagram.adapter.in;
 
+import jakarta.annotation.PostConstruct;
 import ltd.chrshnv.wakagram.domain.model.UpdateInlineMessageEvent;
 import ltd.chrshnv.wakagram.event.PushInlineQueryEvent;
 import ltd.chrshnv.wakagram.domain.model.PushMessageEvent;
@@ -30,10 +31,15 @@ public class TelegramHandler implements SpringLongPollingBot, LongPollingSingleT
 	@Value("${telegram.token}")
 	private String telegramToken;
 
-	private final TelegramClient telegramClient = new OkHttpTelegramClient(getBotToken());
+	private TelegramClient telegramClient;
 
 	public TelegramHandler(List<UpdateHandler> updateHandlers) {
 		this.updateHandlers = updateHandlers;
+	}
+
+	@PostConstruct
+	public void postConstruct() {
+		telegramClient = new OkHttpTelegramClient(getBotToken());
 	}
 
 	@Override
